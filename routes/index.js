@@ -1,10 +1,19 @@
 const express = require('express');
 
 const router = express.Router();
+const sanctionController = require('../controllers/SanctionController');
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  res.render('pages/dashboard');
+  sanctionController
+    .getSanctions()
+    .then(sanctions => {
+      console.log(sanctions);
+      res.render('pages/dashboard', { sanctions });
+    })
+    .catch(() => {
+      res.render('pages/dashboard');
+    });
 });
 
 router.get('/icons', (req, res) => {

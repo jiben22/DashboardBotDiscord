@@ -1,5 +1,5 @@
 {
-  "name": "argon-dashboard-nodejs",
+  "name": "adminBotDiscord-nodejs",
   "version": "1.0.1",
   "private": true,
   "scripts": {
@@ -54,7 +54,7 @@
     "knex": "^0.16.3",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "pg": "^7.8.0",
+    "pg": "^7.11.0",
     "pino": "^5.11.1",
     "pm2": "^3.2.9",
     "postcss-flexbugs-fixes": "^3.3.1"

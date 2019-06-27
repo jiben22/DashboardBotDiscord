@@ -130,9 +130,10 @@
             </tr>
             </thead>
             <tbody>
+            <% for(var i=0; i < sanctions.length; i++) { %>
             <tr>
               <th scope="row">
-                jiben22
+                <% sanctions["id"] %>
               </th>
               <td>
                 TEST
@@ -144,6 +145,7 @@
                 Parce que
               </td>
             </tr>
+            <% } %>
             </tbody>
           </table>
         </div>

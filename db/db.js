@@ -12,7 +12,9 @@ client.connect();
 module.exports = {
   getSanctions() {
     return client
-      .query('SELECT * FROM Sanction')
+      .query('SELECT * FROM Sanction \n' +
+        'ORDER BY id DESC \n' +
+        'LIMIT 5')
       .then(res => {
         return res.rows;
       })
