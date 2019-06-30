@@ -7,14 +7,16 @@ module.exports = {
   getBanKickSanction() {
     // BAN
     let banSanctions = null;
-    db.getTypeSanctions('BAN').then(res => {
+    db.getTypeSanctions('BAN', res => {
       banSanctions = res;
+      console.log(banSanctions);
     });
 
-    // EXCLURE
+    // KICK
     let kickSanctions = null;
-    db.getTypeSanctions('EXCLURE').then(res => {
+    db.getTypeSanctions('EXCLURE', res => {
       kickSanctions = res;
+      console.log(kickSanctions);
     });
 
     return {

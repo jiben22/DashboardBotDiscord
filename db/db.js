@@ -10,18 +10,17 @@ const client = new Client({
 client.connect();
 
 module.exports = {
-  getTypeSanctions(type) {
+  getTypeSanctions(type, cb) {
     const sql = 'SELECT idMember, reason FROM Sanction WHERE name=$1;';
     const values = [type];
 
-    return client
-      .query(sql, values)
-      .then(res => {
-        return res.rows;
-      })
-      .catch(err => {
+    client.query(sql, values, (err, res) => {
+      if (err) {
         throw err;
-      });
+      } else {
+        return cb(res.rows);
+      }
+    });
   },
 
   getLastSanctions(number) {
