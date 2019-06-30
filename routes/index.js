@@ -16,16 +16,8 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/icons', (req, res) => {
-  res.render('pages/icons');
-});
-
-router.get('/maps', (req, res) => {
-  res.render('pages/maps');
-});
-
-router.get('/tables', (req, res) => {
-  res.render('pages/tables');
+router.get('/bot-invitation', (req, res) => {
+  res.render('pages/bot-invitation');
 });
 
 module.exports = router;
