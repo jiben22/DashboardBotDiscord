@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   sanctionController
     .getSanctions()
     .then(sanctions => {
-      console.log(sanctions);
+      //console.log(sanctions);
       res.render('pages/dashboard', { sanctions });
     })
     .catch(() => {
