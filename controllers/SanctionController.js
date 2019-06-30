@@ -4,22 +4,27 @@ const db = require('../db/db');
 const client = new Client();
 
 module.exports = {
-  getSanctions() {
-    return db
-      .getSanctions()
-      .then(sanctions => {
+  getBanKickSanction() {
+    // BAN
+    let banSanctions = null;
+    db.getTypeSanctions('BAN').then(res => {
+      banSanctions = res;
+    });
 
-        /*for(let index = 0; index < sanctions.length; index+1) {
-          // Get username of member
-          //const username = this.getNameMember(sanctions[index].idmember);
-          //sanctions[index].username = username;
-        }*/
+    // EXCLURE
+    let kickSanctions = null;
+    db.getTypeSanctions('EXCLURE').then(res => {
+      kickSanctions = res;
+    });
 
-        return sanctions;
-      })
-      .catch(err => {
-        throw err;
-      });
+    return {
+      ban: banSanctions,
+      kick: kickSanctions,
+    };
+  },
+
+  getLastSanctions() {
+    return db.getLastSanctions(5);
   },
 
   getNameMember(idMember) {

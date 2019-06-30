@@ -8,7 +8,6 @@ const expressLayouts = require('express-ejs-layouts');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
-const initAuthMiddleware = require('./features/login/init-auth-middleware');
 const indexRouter = require('./routes/index');
 
 const staticFolder = process.env.NODE_ENV === 'development' ? 'public' : 'dist';
@@ -38,8 +37,6 @@ app.use(
     },
   })
 );
-
-initAuthMiddleware(app);
 
 // Middleware used for setting error and success messages as available in _ejs_ templates
 app.use((req, res, next) => {

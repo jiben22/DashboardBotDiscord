@@ -51,14 +51,16 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <th scope="row">
-                  jiben22
-                </th>
-                <td>
-                  Parce que
-                </td>
-              </tr>
+              <% for(var i=0; i < banKickSanctions.length; i++) { %>
+                <tr>
+                  <th scope="row">
+                    <% banKickSanctions.ban.idMember %>
+                  </th>
+                  <td>
+                    <% banKickSanctions.ban.reason %>
+                  </td>
+                </tr>
+              <% } %>
               </tbody>
             </table>
           </div>
@@ -87,14 +89,16 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <th scope="row">
-                      jiben22
-                    </th>
-                    <td>
-                      Parce que
-                    </td>
-                  </tr>
+                  <% for(var i=0; i < banKickSanctions.length; i++) { %>
+                    <tr>
+                      <th scope="row">
+                        <% banKickSanctions.kick.idMember %>
+                      </th>
+                      <td>
+                        <% banKickSanctions.kick.reason %>
+                      </td>
+                    </tr>
+                  <% } %>
                   </tbody>
                 </table>
               </div>

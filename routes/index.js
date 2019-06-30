@@ -5,15 +5,9 @@ const sanctionController = require('../controllers/SanctionController');
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  sanctionController
-    .getSanctions()
-    .then(sanctions => {
-      //console.log(sanctions);
-      res.render('pages/dashboard', { sanctions });
-    })
-    .catch(() => {
-      res.render('pages/dashboard');
-    });
+  const banKickSanctions = sanctionController.getBanKickSanction();
+  const sanctions = sanctionController.getLastSanctions();
+  res.render('pages/dashboard', { banKickSanctions, sanctions });
 });
 
 router.get('/bot-invitation', (req, res) => {
